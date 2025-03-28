@@ -157,15 +157,29 @@ console.log(StampTd()); //mi da undefined perchè giustamente non esiste
 /* ESERCIZIO 23
   Scrivi una funzione per aggiungere un background di colore rosso a ogni link all'interno della pagina.
 */
-
+const colorChange = function () {
+  const anchor = document.getElementsByTagName("a");
+  anchor.style.backgroundcolor = "red";
+};
+colorChange();
 /* ESERCIZIO 24
   Scrivi una funzione per aggiungere un nuovo elemento alla lista non ordinata con id "myList".
 */
-
+const newEleToList = function () {
+  const newEle = document.getElementById("myList");
+  const newLi = document.createElement("li");
+  newLi.innerText = "new element";
+  newEle.appendChild(newLi);
+};
+newEleToList();
 /* ESERCIZIO 25
   Scrivi una funzione per svuotare la lista non ordinata con id "myList".
 */
-
+const deleteList = function () {
+  const deleteEle = document.getElementById("myList");
+  deleteEle.innerHTML = "";
+};
+deleteList();
 /* ESERCIZIO 26
   Scrivi una funzione per aggiungere ad ogni tag <tr> la classe CSS "test"
 */
