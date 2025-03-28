@@ -135,10 +135,6 @@ const isTodayMyBirthday = function () {
 };
 console.log(isTodayMyBirthday());
 
-// Arrays & Oggetti
-
-// NOTA: l'array "movies" usato in alcuni esercizi è definito alla fine di questo file
-
 // DOM (nota: gli elementi che selezionerai non si trovano realmente nella pagina)
 
 /* ESERCIZIO 20
@@ -316,6 +312,10 @@ const movies = [
       "https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_SX300.jpg",
   },
 ];
+// Arrays & Oggetti
+
+// NOTA: l'array "movies" usato in alcuni esercizi è definito alla fine di questo file
+
 /* ESERCIZIO 11
   Scrivi una funzione chiamata "deleteProp" che riceve un oggetto e una stringa come parametri; deve ritornare l'oggetto fornito dopo aver eliminato
   in esso la proprietà chiamata come la stringa passata come secondo parametro.
@@ -377,7 +377,16 @@ console.log(sumAllTheYears());
 /* ESERCIZIO 17
   Scrivi una funzione chiamata "searchByTitle" che riceve una stringa come parametro e ritorna i film nell'array "movies" fornito che la contengono nel titolo.
 */
-
+const searchByTitle = function (searchString) {
+  const result = [];
+  for (let i = 0; i < movies.length; i++) {
+    if (movies[i].Title.includes(searchString.toLowerCase())) {
+      result.push(movies[i]);
+    }
+  }
+  return result;
+};
+console.log(searchByTitle("the"));
 /* ESERCIZIO 18
   Scrivi una funzione chiamata "searchAndDivide" che riceve una stringa come parametro e ritorna un oggetto contenente due array: "match" e "unmatch".
   "match" deve includere tutti i film dell'array "movies" fornito che contengono la stringa fornita all'interno del proprio titolo, mentre "unmatch" deve includere tutti i rimanenti.
