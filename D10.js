@@ -358,11 +358,22 @@ console.log(onlyTheYears());
 /* ESERCIZIO 15
   Scrivi una funzione chiamata "onlyInLastMillennium" che ritorna solamente i film prodotto nel millennio scorso contenuti nell'array "movies" fornito.
 */
+const onlyInLastMillennium = function () {
+  return movies.filter((movie) => parseInt(movie.Year) < 2000);
+};
+console.log(onlyInLastMillennium());
 
 /* ESERCIZIO 16
   Scrivi una funzione chiamata "sumAllTheYears" che ritorna la somma di tutti gli anni in cui sono stati prodotti i film contenuti nell'array "movies" fornito.
 */
-
+const sumAllTheYears = function () {
+  let total = 0;
+  for (let i = 0; i < movies.length; i++) {
+    total += parseInt(movies[i].Year);
+  }
+  return total;
+};
+console.log(sumAllTheYears());
 /* ESERCIZIO 17
   Scrivi una funzione chiamata "searchByTitle" che riceve una stringa come parametro e ritorna i film nell'array "movies" fornito che la contengono nel titolo.
 */
