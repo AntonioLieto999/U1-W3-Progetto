@@ -92,7 +92,13 @@ console.log(splitMe("ciao sono antonio"));
 /* ESERCIZIO 6
   Crea una funzione chiamata "isThisAnEmail" che riceve una stringa come parametro e ritorna true se la stringa è un valido indirizzo email.
 */
-
+const isThisAnEmail = function (email) {
+  if (email.includes("@") && email.includes(".")) {
+    return true;
+  } else {
+    return false;
+  }
+};
 /* ESERCIZIO 7
   Scrivi una funzione chiamata "whatDayIsIt" che ritorna il giorno della settimana corrente.
 */
