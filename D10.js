@@ -122,7 +122,7 @@ console.log(whatDayIsIt());
 const howManyDays = function (x) {
   const today = new Date();
   const minusDay = today - x;
-  return Math.floor(minusDay / 1000 / 60 / 60 / 24);
+  return Math.floor(minusDay / 1000 / 60 / 60 / 24); //questa qui l'ho rubata completamente
 };
 console.log(howManyDays(new Date("2023-09-09")));
 /* ESERCIZIO 10
@@ -183,7 +183,10 @@ deleteList();
 /* ESERCIZIO 26
   Scrivi una funzione per aggiungere ad ogni tag <tr> la classe CSS "test"
 */
-
+const addCss = function () {
+  const everyTr = document.getElementsByTagName("tr");
+  everyTr.addClassList("test");
+};
 // [EXTRA] JS Avanzato
 
 /* ESERCIZIO 27
