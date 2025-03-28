@@ -82,12 +82,37 @@ console.log(splitMe("ciao sono antonio"));
   Crea una funzione chiamata "deleteOne" che riceve una stringa e un booleano come parametri.
   Se il valore booleano è true la funzione deve ritornare la stringa senza il primo carattere, altrimenti la deve ritornare senza l'ultimo.
 */
-
+const deleteOne = function (x, y) {
+  let result = "";
+  if (y) {
+    for (let i = 1; i < x.length; i++) {
+      result += x[i];
+    }
+  } else {
+    for (let i = 0; i < x.length - 1; i++) {
+      result += x[i];
+    }
+  }
+  return result;
+};
 /* ESERCIZIO 5
   Crea una funzione chiamata "onlyLetters" che riceve una stringa come parametro e la ritorna eliminando tutte le cifre numeriche.
 
   Es.: onlyLetters("I have 4 dogs") => ritorna "I have dogs"
 */
+const onlyLetters = function (str) {
+  let result = "";
+  for (let i = 0; i < str.length; i++) {
+    const char = str[i];
+    if (char < "0" || char > "9") {
+      result += char;
+    }
+  }
+  return result;
+};
+console.log(onlyLetters("i have 4 dgos"));
+console.log(onlyLetters("n0n h0 fant45i4"));
+console.log(onlyLetters("non ci sono numeri"));
 
 /* ESERCIZIO 6
   Crea una funzione chiamata "isThisAnEmail" che riceve una stringa come parametro e ritorna true se la stringa è un valido indirizzo email.
