@@ -140,15 +140,20 @@ console.log(isTodayMyBirthday());
 /* ESERCIZIO 20
   Scrivi una funzione per selezionare l'elemento dotato di id "container" all'interno della pagina.
 */
-
+const newElement = document.getElementById("container");
 /* ESERCIZIO 21
   Scrivi una funzione per selezionare ogni tag <td> all'interno della pagina.
 */
-
+const newTd = document.getElementsByTagName("td");
 /* ESERCIZIO 22
   Scrivi una funzione che, tramite un ciclo, stampa in console il testo contenuto in ogni tag <td> all'interno della pagina.
 */
-
+const StampTd = function () {
+  for (let i = 0; i < newTd.length; i++) {
+    console.log(newTd[i].innerText);
+  }
+};
+console.log(StampTd()); //mi da undefined perchè giustamente non esiste
 /* ESERCIZIO 23
   Scrivi una funzione per aggiungere un background di colore rosso a ogni link all'interno della pagina.
 */
