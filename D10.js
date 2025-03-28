@@ -320,18 +320,40 @@ const movies = [
   Scrivi una funzione chiamata "deleteProp" che riceve un oggetto e una stringa come parametri; deve ritornare l'oggetto fornito dopo aver eliminato
   in esso la proprietà chiamata come la stringa passata come secondo parametro.
 */
+const deleteProp = function (obj, str) {
+  delete obj[str];
+  return obj;
+};
+console.log(deleteProp(movies, "Poster"));
 
 /* ESERCIZIO 12
   Scrivi una funzione chiamata "newestMovie" che trova il film più recente nell'array "movies" fornito.
 */
+const newestMovie = function () {
+  let newest = movies[0];
+  for (let i = 1; i < movies.length; i++) {
+    if (parseInt(movies[i].Year) > parseInt(newest.Year)) {
+      newest = movies[i];
+    }
+  }
+  return newest;
+};
+console.log(newestMovie());
 
 /* ESERCIZIO 13
   Scrivi una funzione chiamata countMovies che ritorna il numero di film contenuti nell'array "movies" fornito.
 */
-
+const countMovies = function () {
+  return movies.length;
+};
+console.log(countMovies());
 /* ESERCIZIO 14
   Scrivi una funzione chiamata "onlyTheYears" che crea un array con solamente gli anni di uscita dei film contenuti nell'array "movies" fornito.
 */
+const onlyTheYears = function () {
+  return movies.map((movie) => movie.Year);
+};
+console.log(onlyTheYears());
 
 /* ESERCIZIO 15
   Scrivi una funzione chiamata "onlyInLastMillennium" che ritorna solamente i film prodotto nel millennio scorso contenuti nell'array "movies" fornito.
